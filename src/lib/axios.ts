@@ -1,8 +1,11 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
+import dotenv from "dotenv";
 
-export const API_URL = process.env.API_URL || "";
+dotenv.config();
 
-export const axiosInstance = axios.create({
+export const API_URL = process.env.API_URL;
+
+export const axiosInstance: AxiosInstance = axios.create({
   baseURL: API_URL,
   headers: {
     "Content-Type": "application/json",

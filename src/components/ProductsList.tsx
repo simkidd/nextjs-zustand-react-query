@@ -15,6 +15,9 @@ const ProductsList = () => {
     queryFn: getProducts,
   });
 
+  console.log("homepage products>>>", products);
+
+
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error loading products</p>;
 
