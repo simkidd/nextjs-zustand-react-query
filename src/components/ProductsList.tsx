@@ -17,9 +17,8 @@ const ProductsList = () => {
 
   console.log("homepage products>>>", products);
 
-
   if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error loading products</p>;
+  if (error) return <p>{error.message}</p>;
 
   return (
     <div className="">
