@@ -1,4 +1,3 @@
-import { Product } from "@/interfaces/product.interface";
 import { axiosInstance } from "./axios";
 
 export async function getProducts() {

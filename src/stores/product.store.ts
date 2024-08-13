@@ -17,11 +17,11 @@ export const useProductStore = create<IProductStore>((set) => ({
   updateProduct: (updatedProduct) =>
     set((state) => ({
       products: state.products.map((product) =>
-        product.id === updatedProduct.id ? updatedProduct : product
+        product._id === updatedProduct._id ? updatedProduct : product
       ),
     })),
-  deleteProduct: (productId) =>
+  deleteProduct: (id) =>
     set((state) => ({
-      products: state.products.filter((product) => product.id !== productId),
+      products: state.products.filter((product) => product._id !== id),
     })),
 }));
