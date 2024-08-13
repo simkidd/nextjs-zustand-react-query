@@ -8,8 +8,8 @@ function makeQueryClient() {
   return new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 60 * 1000,
-        refetchInterval: 60 * 1000,
+        staleTime: 1 * 60 * 1000, // 1 minute
+        refetchInterval: 5 * 60 * 1000, // 5 minutes
       },
       dehydrate: {
         // include pending queries in dehydration
