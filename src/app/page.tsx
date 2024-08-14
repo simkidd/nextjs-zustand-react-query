@@ -1,27 +1,16 @@
-import ProductsList from "@/components/ProductsList";
-import { getProducts } from "@/lib/api";
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
+import Link from "next/link";
+import React from "react";
 
-export default async function Home() {
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery({
-    queryKey: ["products"],
-    queryFn: getProducts,
-  });
-
-  // Dehydrate the queryClient state
-  const dehydratedState = dehydrate(queryClient);
-
+const Home = () => {
   return (
-    <main className="container mx-auto px-4">
-      <HydrationBoundary state={dehydratedState}>
-        <ProductsList />
-      </HydrationBoundary>
-    </main>
+    <div className="w-full min-h-dvh">
+      <div className="container mx-auto px-2 py-8">
+        <div className="flex items-center justify-center">
+          <Link href="/shop" className="px-6 py-4 bg-indigo-600">See all products</Link>
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default Home;
